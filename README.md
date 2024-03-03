@@ -27,7 +27,11 @@
   ```
   python3 scripts/ingest_taxi_records.py
   ```
-
+4. Run both the following scripts to stimulate decoder and consumer:
+  ```
+  python3 decoder.py
+  python3 consumer.py
+  ```
   Pipeline flow:
   
   <img width="1015" alt="image" src="https://github.com/Dev317/cdc_rabbitmq/assets/70529335/a186611c-6ce8-4035-8664-d2a6135115d7">
