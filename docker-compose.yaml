@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  taxi_trip_db:
+    build:
+      context: .
+      dockerfile: taxi_trip_postgres.Dockerfile
+    container_name: "taxi_trip_postgres"
+    ports:
+      - "5432:5432"
+    # volumes:
+      # - ./taxi_trip_data:/var/lib/postgresql/data
+
+  taxi_aggregate_db:
+    build:
+      context: .
+      dockerfile: taxi_aggregate_postgres.Dockerfile
+    container_name: "taxi_aggregate_postgres"
+    ports:
+      - "5433:5432"
+    # volumes:
+      # - ./taxi_aggregate_data:/var/lib/postgresql/data
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    container_name: "rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+# volumes:
+#   taxi_trip_data:
+#   taxi_aggregate_data:
